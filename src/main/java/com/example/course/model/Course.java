@@ -5,29 +5,28 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-
 @Entity
 @Table(name="courses")
 public class Course {
     @Id
     @GeneratedValue
     private int id;
-    private String CourseTitle;
-    private String CourseDescription;
-    private String CourseVenue;
-    private String CourseDuration;
-    private String CourseDate;
+    private String courseTitle;
+    private String courseDescription;
+    private String courseVenue;
+    private String courseDuration;
+    private String courseDate;
 
     public Course() {
     }
 
     public Course(int id, String courseTitle, String courseDescription, String courseVenue, String courseDuration, String courseDate) {
         this.id = id;
-        CourseTitle = courseTitle;
-        CourseDescription = courseDescription;
-        CourseVenue = courseVenue;
-        CourseDuration = courseDuration;
-        CourseDate = courseDate;
+        this.courseTitle = courseTitle;
+        this.courseDescription = courseDescription;
+        this.courseVenue = courseVenue;
+        this.courseDuration = courseDuration;
+        this.courseDate = courseDate;
     }
 
     public int getId() {
@@ -39,42 +38,43 @@ public class Course {
     }
 
     public String getCourseTitle() {
-        return CourseTitle;
+        return courseTitle;
     }
 
     public void setCourseTitle(String courseTitle) {
-        CourseTitle = courseTitle;
+        this.courseTitle = courseTitle;
     }
 
     public String getCourseDescription() {
-        return CourseDescription;
+        return courseDescription;
     }
 
     public void setCourseDescription(String courseDescription) {
-        CourseDescription = courseDescription;
+        this.courseDescription = courseDescription;
     }
 
     public String getCourseVenue() {
-        return CourseVenue;
+        return courseVenue;
     }
 
     public void setCourseVenue(String courseVenue) {
-        CourseVenue = courseVenue;
+        this.courseVenue = courseVenue;
     }
 
     public String getCourseDuration() {
-        return CourseDuration;
+        return courseDuration;
     }
 
     public void setCourseDuration(String courseDuration) {
-        CourseDuration = courseDuration;
+        this.courseDuration = courseDuration;
     }
 
     public String getCourseDate() {
-        return CourseDate;
+        return courseDate;
     }
 
     public void setCourseDate(String courseDate) {
-        CourseDate = courseDate;
+        this.courseDate = courseDate;
     }
 }
+
