@@ -6,7 +6,9 @@ import com.example.course.model.Course;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 
@@ -27,7 +29,7 @@ public class Coursedata {
         return (List<Course>) dao.findAll();
     }
     @PostMapping(path="/add",consumes ="application/json",produces = "application/json")
-    public String Add(@RequestBody Course c)
+    public Map<String,String> Add(@RequestBody Course c)
     {
         System.out.println(c.getCourseTitle().toString());
         System.out.println(c.getCourseDescription().toString());
@@ -35,7 +37,10 @@ public class Coursedata {
         System.out.println(c.getCourseDuration().toString());
         System.out.println(c.getCourseDate().toString());
         dao.save(c);
-        return "course added Successfully";
+        HashMap<String,String> map = new HashMap<>();
+        map.put("status","success");
+        return map;
+
     }
 
 }
